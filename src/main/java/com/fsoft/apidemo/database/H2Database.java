@@ -17,7 +17,7 @@ public class H2Database {
             @Override
             public void run(String... args) throws Exception {
                 Product product1 = new Product("Macboook Air", 2020, 30.0, "");
-                Product product2 = new Product("Macboook Pro", 2020, 30.0, "");
+                Product product2 = new Product("Macboook Pro", 2020, 40.0, "");
                 logger.info("Insert data: " + productRepository.save(product1));
                 logger.info("Insert data: " + productRepository.save(product2));
             }

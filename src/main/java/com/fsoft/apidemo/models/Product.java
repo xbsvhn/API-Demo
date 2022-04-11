@@ -1,11 +1,10 @@
 package com.fsoft.apidemo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Calendar;
 
 @Entity
+
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,6 +15,12 @@ public class Product {
     private String url;
 
     public Product() {
+    }
+
+    @Transient
+    private int age;
+    public int getAge(){
+        return Calendar.getInstance().get(Calendar.YEAR) - year;
     }
 
     public Product(String productName, int year, Double price, String url) {
